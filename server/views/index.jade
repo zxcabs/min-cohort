@@ -1,0 +1,25 @@
+html
+    head
+        title Когортный анализ с #{result[result.length - 1].date} по #{result[0].date}
+        style
+            | table {border: 1px solid black; width: 100%; border-collapse: collapse;}
+            | table td {border: 1px solid black;}
+            | table tr:hover {background: gray;}
+    body
+        h1 Когортный анализ с #{result[result.length - 1].date} по #{result[0].date}
+        table
+            thead
+                tr
+                    th Дата
+                    th Регистраций
+                    th R1
+                    th R
+                    th Платежи
+            tbody
+                each cohort in result
+                    tr
+                        td!= cohort.date
+                        td!= cohort.count
+                        td!= cohort.R1
+                        td!= cohort.R
+                        td!= cohort.purchase

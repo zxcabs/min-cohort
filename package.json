@@ -1,0 +1,20 @@
+{
+  "name": "min-cohort",
+  "version": "0.0.0",
+  "description": "Minimal cohort server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "bluebird": "^2.9.25",
+    "dateformat": "^1.0.11",
+    "express": "4.12.3",
+    "jade": "^1.9.2",
+    "js-yaml": "3.3.0",
+    "log4js": "^0.6.24",
+    "mysql": "2.6.2"
+  }
+}

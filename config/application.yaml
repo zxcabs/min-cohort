@@ -1,0 +1,27 @@
+http:
+  port: 80
+  addr: 0.0.0.0
+
+mysql:
+  user: user
+  password: passw0rd
+  connectionLimit: 20
+  host: localhost
+  database: minCohortDb
+
+log4js:
+  appenders:
+    -
+      type: file
+      filename: log/application.log
+      maxLogSize: 20480,
+      backups: 30,
+      pattern: -yyyy-MM-dd
+      category: application
+    -
+      type: file
+      filename: log/http.log
+      maxLogSize: 20480,
+      backups: 30,
+      pattern: -yyyy-MM-dd
+      category: http
