@@ -6,19 +6,16 @@ var
     express = require('express'),
     app = module.exports = express(),
     bluebird = require('bluebird'),
-    log4js = require('log4js'),
     cohort = require('./cohort'),
-    logConfig = require('../config').get('application').log4js;
+    log = require('../log');
 
 app.set('view engine', 'jade');
 app.set('views', p.join(__dirname, 'views'));
 
-log4js.configure(logConfig);
-
 var
-    logHttp = log4js.getLogger('http');
+    logHttp = log.getLogger('http');
 
-app.use(log4js.connectLogger(logHttp, { level: 'auto' }));
+app.use(log.connectLogger(logHttp, { level: 'auto' }));
 
 app.use('/api', require('./api'), function (err, req, res, next) {
     // логируем ошибки
