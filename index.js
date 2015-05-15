@@ -13,6 +13,10 @@ function stopOnError(err) {
 }
 
 process.on('uncaughtException', stopOnError);
+// логируем ошибки необработанные в промисах.
+process.on('unhandledRejection', function (error) {
+    applicationLog.error(error);
+});
 
 var
     server = require('./server'),
@@ -25,6 +29,7 @@ if (module.parent) {
         if (err) {
             return stopOnError(err);
         }
-        applicationLog.log('Server started on: ' + httpConfig.addr + ':' + httpConfig.port);
+
+        applicationLog.info('Server started on: ' + httpConfig.addr + ':' + httpConfig.port);
     });
 }

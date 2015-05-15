@@ -24,7 +24,7 @@ app.use('/api', require('./api'), function (err, req, res, next) {
 });
 
 
-app.get('/', function (req, res) {
+app.get('/', function (req, res, next) {
     var
         startDate = new Date(),
         count = req.query.count? parseInt(req.query.count, 10): 20,
