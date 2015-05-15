@@ -10,6 +10,7 @@
 - Установить mysql и nodejs
 - Выполнить установку node модулей `npm i`
 - Развернуть базу `init/dbinit.sql`
+- Скопировать `config/application-example.yaml` в `config/application.yaml`
 - Настроить конфиг `config/application.yaml`
 - Запускаем сервер `node index.js`
 
